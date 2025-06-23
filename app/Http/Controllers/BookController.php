@@ -34,7 +34,6 @@ class BookController extends Controller
     ) {
         $this->bookService = $bookService;
         $this->categoryService = $categoryService;
-        $this->middleware('auth');
     }
 
     /**
