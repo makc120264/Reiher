@@ -102,7 +102,7 @@
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 @foreach ($categories as $category)
                                     <div class="flex items-center">
-                                        <input type="checkbox" name="categories[]" id="category_{{ $category->id }}" value="{{ $category->id }}" class="mr-2" {{ in_array($category->id, old('categories', [])) ? 'checked' : '' }}>
+                                        <input type="checkbox" name="categories[]" id="category_{{ $category->id }}" value="{{ $category->id }}" class="mr-2" {{ in_array($category->id, old('categories', [])) || request()->get('category') == $category->id ? 'checked' : '' }}>
                                         <label for="category_{{ $category->id }}">{{ $category->name }}</label>
                                     </div>
                                 @endforeach

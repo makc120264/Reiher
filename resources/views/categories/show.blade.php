@@ -38,7 +38,12 @@
                     </div>
 
                     <div class="mt-8">
-                        <h3 class="text-xl font-semibold mb-4">{{ __('Books in this Category') }}</h3>
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-semibold">{{ __('Books in this Category') }}</h3>
+                            <a href="{{ route('books.create', ['category' => $category->id]) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                {{ __('Add Book') }}
+                            </a>
+                        </div>
 
                         @if ($books->count() > 0)
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
